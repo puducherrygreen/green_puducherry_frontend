@@ -1,0 +1,64 @@
+<app-admin-homepage></app-admin-homepage>
+<section>
+  <app-dashboard></app-dashboard>
+</section>
+<section>
+  <div class="main-container">
+    <div class="file-upload-main">
+      <form [formGroup]="uploadImage">
+        <input
+          type=""
+          name="file"
+          id="file"
+          class="inputfile"
+          (click)="selectFiles()"
+          class="inputfile"
+        />
+
+        <label for="file">Choose Image</label>
+      </form>
+      <div class="preview-class" *ngIf="this.selectButtonEnable == false">
+        <div
+          *ngFor="let preview of this.selectedImages; let i = index"
+          class="preview-container"
+        >
+          <img src="{{ preview.imageUrl }}" class="preview" />
+          <i
+            class="fa fa-close"
+            style="font-size: 18px"
+            (click)="removeImage(preview._id,preview)"
+          ></i>
+        </div>
+      </div>
+
+      <div class="preview-class" *ngIf="this.selectButtonEnable == true">
+        <div
+          *ngFor="let preview of this.notSelectedImages; let i = index"
+          class="preview-container"
+        >
+          <img src="{{ preview.imageUrl }}" class="preview" />
+          <i
+            class="fa fa-check"
+            style="font-size: 18px"
+            (click)="selectPut(preview._id, preview)"
+          ></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="file-upload-main">
+            <input type="file" name="file" id="file" class="inputfile" accept="image/*" multiple
+                (change)="selectFiles($event)" class="inputfile" />
+
+            <label for="file">Upload Image</label>
+            <div class="preview-class">
+                <img *ngFor='let preview of previews' [src]="preview" class="preview">
+                <i class="fa fa-close" style="font-size:24px"></i>
+            </div>
+          
+        </div> -->
+    <!-- <div class="input-container">
+      <button type="button" class="send-button">Post</button>
+    </div> -->
+  </div>
+</section>

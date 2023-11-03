@@ -1,0 +1,96 @@
+<app-admin-homepage></app-admin-homepage>
+<section>
+  <app-dashboard></app-dashboard>
+</section>
+<section>
+  <article class="main-container">
+    <h3 class="heading-cls-1">Welcome to Green Puducherry Mission</h3>
+    <div class="inner-container">
+      <div>
+        <h3 class="heading-cls">
+          No. of sapling planted <br /><span class="count-planted">
+            {{this.overAllCountSapled}}
+          </span>
+        </h3>
+      </div>
+      <div class="button-grp">
+        <button type="button" class="button-cls button-1">
+          Puducherry <br /><span class="count-planted-1">{{this.puducherry || 0}}</span>
+        </button>
+        <button type="button" class="button-cls button-2">
+          Karaikal <br /><span class="count-planted-1">{{this.karaikal || 0}}</span>
+        </button>
+        <button type="button" class="button-cls button-3">
+          Mahe <br /><span class="count-planted-1">{{this.mahe || 0}}</span>
+        </button>
+        <button type="button" class="button-cls button-4">
+          Yanam <br /><span class="count-planted-1">{{this.yanam || 0}}</span>
+        </button>
+      </div>
+    </div>
+  </article>
+  <div class="table-container">
+    <div class="inner-table-container">
+      <div class="search-bar">
+        <a class="download_csv" (click)="download()">Download CSV</a>
+        <form class="example">
+          <input
+            type="text"
+            class="text-clor"
+            placeholder="Search.."
+            name="search2" [(ngModel)]="seachText"
+          />
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      <div>
+        <table cellpadding="20px" class="table-class">
+          <tr>
+            <th>S:no</th>
+            <th>Username</th>
+            <th>Region</th>
+            <th>Commune/Municipality</th>
+            <th>Date & Time</th>
+            <th>Status</th>
+            <th>Photos</th>
+            <th>Location</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor="let items of data | filter:seachText ; let i = index " >
+            <td>{{ i + 1 }}</td>
+            <td>{{ items.userName }}</td>
+            <td>{{ items.region }}</td>
+            <td>{{ items.commune }}</td>
+            <td>{{ items.firstSapledDate | date: 'YYY-MM-mm' }} & {{ items.firstSapledDate | date: 'h: mm a' }}</td>
+            <td>{{ items.status }}</td>
+           
+            <td>
+              <div class="image-container">
+                <div
+                  *ngFor="let imageData of items.plantImagesData; let i = index"
+                  class="image-wrapper"
+                >
+                  <img
+                    *ngIf="i < 2"
+                    src="{{ imageData.imageUrl }}"
+                    height="100px"
+                    width="100px"
+                    class="image-1"
+                  />
+                  <div
+                    *ngIf="i === 1 && items.plantImagesData.length > 2"
+                    class="more-images"
+                  >
+                    <!-- <span>+{{items.plantImagesData.length - 2}} more</span> -->
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>{{ items.latitude }} & {{ items.longitude }}</td>
+            <td><button type="button" class="button-view" routerLink="../view-details" [queryParams]="{id:items._id}">View</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

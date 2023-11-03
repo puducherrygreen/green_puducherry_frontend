@@ -1,0 +1,55 @@
+<app-admin-homepage></app-admin-homepage>
+<section>
+    <!-- <div class="login-container">
+        <h3 class="heading-admin-login">Admin Login</h3>
+        <form [formGroup]="loginForm">
+        <article class="login-input"> -->
+
+    <!-- <input type="text" class="text-box" placeholder="Username" formControlName="userName"> -->
+    <!-- <input type="password" class="text-box" placeholder="Password" formControlName="password"> -->
+    <!-- <div class="password-div">
+                <input [type]="password" placeholder="Enter password" formControlName="password"  required>
+                <a (click)="onClick()" class="clickFunction">
+                  <i class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+                  <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+                </a>
+                </div> -->
+
+    <!-- <button type="button" class="button-cls text-box-1" (click)="login()">Login</button> -->
+    <!-- </article>
+    </form>
+    </div> -->
+
+    <div class="container">
+    <div class="login-container">
+        <form [formGroup]="loginForm" class="form-class">
+            <h3 class="heading-admin-login">Admin Login</h3>
+        
+                <p *ngIf="message" class="emailvalidation">Incorrect Username or Password</p>
+                <span style="color: red; padding-left: 20px;"
+                    *ngIf="formSubmitted && loginForm.get('userName')?.invalid">Enter user name</span>
+                <input type="text" placeholder="Enter username" class="text-box" name="uname" formControlName="userName"
+                    required>
+                <span style="color: red; padding-left: 20px;"
+                    *ngIf="formSubmitted && loginForm.get('password')?.invalid">Enter password</span>
+                <div class="password-div">
+                    <input [type]="password" placeholder="Enter password" class="text-box" formControlName="password"
+                        required>
+                    <a (click)="onClick()" class="clickFunction">
+                        <i class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+                        <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+                    </a>
+                </div>
+            
+
+
+            <button type="button" class="button-cls text-box-1" (click)="login()"><i
+                class="fa"
+                [ngClass]="{'fa-spin fa-spinner': isLoading}"></i>Login</button>
+        </form>
+    </div>
+</div>
+    <article class="inner-container">
+        <img src="../../assets/playstore.png" height="60px" width="200px">
+    </article>
+</section>

@@ -1,0 +1,186 @@
+.textarea-class {
+  outline: none;
+  padding: 20px;
+  border: none;
+}
+::placeholder {
+  font-weight: bold;
+  color: #b1b1b1;
+}
+.input-container {
+  margin-top: 23px;
+  max-width: 1200px;
+}
+.input-class {
+  border: none;
+  padding: 20px;
+  width: 70%;
+  outline: none;
+}
+.main-container {
+  max-width: 1200px;
+  width: 90%;
+  margin-inline: auto;
+  margin-block: auto;
+  margin-top: 47px;
+}
+.send-button {
+  width: 20%;
+  background-color: #087519;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+}
+.preview {
+  width: 10%;
+}
+.file-upload-image {
+  display: flex;
+  gap: 30px;
+}
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.inputfile + label {
+  background: white;
+  padding: 18px;
+  margin-top: 14px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #b1b1b1;
+}
+
+.inputfile + label {
+  cursor: pointer; /* "hand" cursor */
+}
+label {
+  background: white;
+  padding: 18px;
+  margin-top: 14px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #b1b1b1;
+}
+.preview-class {
+  margin-top: 15px;
+  display: flex;
+  gap: 11px;
+}
+
+/* sample */
+/* Base Styles for Mobile Screens (up to 768px) */
+.textarea-class,
+.input-class,
+.inputfile + label,
+label,
+.send-button {
+  width: 100%; /* Expand to full container width */
+}
+
+/* Increase Font Size on Smaller Screens */
+.input-class,
+.textarea-class,
+.send-button {
+  font-size: 18px;
+}
+
+/* Add Spacing and Padding */
+.input-container {
+  margin-top: 15px;
+}
+
+.input-class,
+.textarea-class,
+.inputfile + label,
+label,
+.send-button {
+  padding: 10px; /* Adjust padding for better spacing on smaller screens */
+}
+
+/* For Larger Screens (e.g., tablets and desktops) */
+@media (min-width: 769px) {
+  .main-container {
+    margin-top: 47px;
+  }
+
+  .textarea-class,
+  .input-class {
+    width: 70%;
+  }
+
+  .send-button {
+    width: 20%;
+    font-size: 20px;
+  }
+}
+
+/*  */
+.preview {
+  /* max-width: 100%;
+  height: auto;  */
+  height: 236px;
+  width: 300px;
+  object-fit: cover;
+}
+
+.preview-class {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap; /* Allow images to wrap to the next line if they don't fit horizontally */
+  gap: 40px;
+}
+/* Existing styles for the file input and its label */
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  background: white;
+  padding: 18px; /* Remove this padding */
+  margin-top: 14px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #b1b1b1;
+  width: 20%;
+}
+
+.inputfile + label {
+  cursor: pointer;
+}
+.preview-container {
+  position: relative;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.fa-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  color: #bb1919;
+  border-radius: 21px;
+  background-color: white;
+  padding: 5px;
+}
+.fa-check {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  color: green;
+  border-radius: 21px;
+  background-color: white;
+  padding: 7px;
+}

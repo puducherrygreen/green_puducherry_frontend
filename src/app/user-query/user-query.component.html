@@ -1,0 +1,50 @@
+<app-admin-homepage></app-admin-homepage>
+<app-dashboard></app-dashboard>
+<section style="margin-top: 21px">
+  <div class="table-container">
+    <div class="inner-table-container">
+      <div class="search-bar">
+        <form class="example">
+          <input
+            type="text"
+            class="text-clor"
+            placeholder="Search.."
+            name="search2" [(ngModel)]="seachText"
+          />
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      <div>
+        <table cellpadding="20px" class="table-class">
+          <tr>
+            <th>S:no</th>
+            <th>Username</th>
+            <th>Query</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor="let query of this.query | filter: seachText; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{query.userName}}</td>
+            <td>{{query.query}}</td>
+            <td>{{query.date | date:'YYY-MM-dd'}}</td>
+            <td [ngStyle]="{'color': query.readStatus === 'Pending' ? 'red' : 'green'}">{{query.readStatus}}</td>
+            <td>
+              <button
+                type="button"
+                class="res-btn"
+                routerLink="../query-response"
+                [queryParams]="{id: query.userId,queryId: query._id}"
+              >
+                Response
+              </button>
+            </td>
+          </tr>
+       
+        
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

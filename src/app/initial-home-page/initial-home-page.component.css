@@ -1,0 +1,134 @@
+/* .main-container{
+    width: 75%;
+    margin: auto;
+    height: 300px;
+    border-radius: 7px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 6px 6px #f1f0f0;
+
+} */
+.heading-cls {
+  font-size: 30px;
+  color: #175c1f;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.heading-cls-1 {
+  font-size: 35px;
+  color:#087519;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  font-weight: bold;
+}
+.count-planted {
+  color: #258d0b;
+}
+
+.button-grp {
+  display: flex;
+  justify-content: space-around;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.inner-container {
+  width: 90%;
+  border-radius: 25px;
+  background-color: #ffffffa3;
+  box-shadow: 6px 6px #f1f0f0;
+  max-width: 1200px;
+  margin-block: auto;
+  margin-inline: auto;
+  padding: 40px;
+  margin-top: 30px;
+}
+.button-cls {
+  padding: 22px;
+  width: 200px;
+  color: white;
+  border: none;
+  border-radius: 19px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+.button-1 {
+  background-color: #d15f0d;
+}
+.button-2 {
+  background-color: #0e8375;
+}
+
+.button-3 {
+  background-color: #cf1643;
+}
+.button-4 {
+  background-color: #1333a6;
+}
+.login-button {
+  background-color: #087519;
+  padding: 8px;
+  color: white;
+  border-radius: 10px;
+  width: 30px;
+  border: none;
+  width: 155px;
+  font-size: 18px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.inner-container-2 {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  width: 65%;
+  margin: auto;
+  border-radius: 7px;
+  align-items: center;
+  max-width: 1200px;
+  margin-bottom: auto;
+  margin-inline: auto;
+  padding: 20;
+  margin-top: 38px;
+}
+@media (max-width: 630px) {
+  .button-cls {
+    width: 180px;
+  }
+}
+@media (max-width: 560px) {
+  .button-cls {
+    width: 160px;
+  }
+  .heading-cls-1{
+    font-size: 22px;
+
+  }
+  .heading-cls{
+    font-size: 26px;
+
+  }
+}
+@media(max-width:460px){
+    .heading-cls{
+        font-size: 24px;
+    }
+
+}
+@media (max-width: 600px) {
+  .inner-container-2 {
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+}

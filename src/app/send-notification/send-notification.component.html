@@ -1,0 +1,63 @@
+<app-admin-homepage></app-admin-homepage>
+<section>
+    <app-dashboard></app-dashboard>
+   <div class="container">
+        <div class="main-container-inner">
+            <form [formGroup]="notificationForm"> 
+            <div class="dropdown-class">
+                <div style="margin-top: 10px;">
+                    <label class="label-class">Plant Status</label>
+                    <div>
+                        <select class="select-option-class" formControlName="status">
+                            <option [ngValue]="null" disabled selected>Select status</option>
+                            <option class="option-cls" value="All">All</option>
+                            <option class="option-cls" value="Alive">Alive</option>
+                            <option class="option-cls" value="Dead">Dead</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="margin-top: 10px;">
+                    <label class="label-class">Region</label>
+                    <div >
+                        <select class="select-option-class"  (change)="getregionId($event)" formControlName="regionId">
+                            <option [ngValue]="null" disabled selected>Select Region</option>
+                            <option class="option-cls" value="All">All</option>
+                            <option class="option-cls" *ngFor="let regionData of this.region" value="{{regionData._id}}">{{regionData.regionName}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div style="margin-top: 10px;">
+                    <label class="label-class">Commune/Municipality</label>
+                    <div>
+                        <select class="select-option-class" formControlName="communeId">
+                            <option [ngValue]="null" disabled selected>Select commune</option>
+                            <option class="option-cls" value="All">All</option>
+                            <option class="option-cls" *ngFor="let commune of this.commune" value="{{commune._id}}">{{commune.communeName}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="input-main-container">
+            <div class="input-container">
+                <input type="text" placeholder="Title" class="input-class" formControlName="title">
+            </div>
+            <div class="input-container">
+                <textarea cols="81" rows="5" class="textarea-class" placeholder="Message" formControlName="message"></textarea>
+            </div>
+        </div>
+            <div class="input-container">
+                <button type="button" class="send-button" (click)="createNotification()"><i
+                    class="fa"
+                    [ngClass]="{'fa-spin fa-spinner': isLoading}"></i>Send</button>
+            </div>
+        </form>
+        </div>
+        <!-- <article>
+            <div class="main-user-count">
+                <h2 class="user-count">User Count</h2>
+                <h3 class="count">253</h3>
+            </div>
+        </article> -->
+    </div> 
+</section>
