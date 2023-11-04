@@ -72,6 +72,7 @@ label {
   margin-top: 15px;
   display: flex;
   gap: 11px;
+  justify-content: center;
 }
 
 /* sample */
@@ -104,22 +105,7 @@ label,
   padding: 10px; /* Adjust padding for better spacing on smaller screens */
 }
 
-/* For Larger Screens (e.g., tablets and desktops) */
-@media (min-width: 769px) {
-  .main-container {
-    margin-top: 47px;
-  }
 
-  .textarea-class,
-  .input-class {
-    width: 70%;
-  }
-
-  .send-button {
-    width: 20%;
-    font-size: 20px;
-  }
-}
 
 /*  */
 .preview {
@@ -183,4 +169,76 @@ label,
   border-radius: 21px;
   background-color: white;
   padding: 7px;
+}
+/* For Larger Screens (e.g., tablets and desktops) */
+@media (min-width: 769px) {
+  .main-container {
+    margin-top: 47px;
+  }
+
+  .textarea-class,
+  .input-class {
+    width: 70%;
+  }
+  .send-button {
+    width: 20%;
+    font-size: 20px;
+  }
+}
+@media(max-width:950px){
+  .preview{
+    height: 225px;
+    width: 270px;
+  }
+  .preview-class{
+    gap: 30px;
+  }
+}
+@media(max-width:750px){
+  .inputfile + label{
+    width: 30%;
+  }
+  .main-container{
+    width: 95%;
+  }
+  .preview{
+    height: 200px;
+    width: 244px;
+  }
+  .preview-class{
+    gap: 30px;
+  }
+}
+@media(max-width:600px){
+  .preview{
+    height: 180px;
+    width: 215px;
+  }
+  .preview-class{
+    gap: 25px;
+  }
+  .inputfile + label{
+    width: 36%;
+  }
+}
+@media(max-width:520px){
+  .preview{
+    height: 160px;
+    width: 200px;
+  }
+  .preview-class{
+    gap: 22px;
+  }
+}
+@media(max-width:490px){
+  .preview{
+    height: 208px;
+    width: 240px;
+  }
+  .preview-class{
+    gap: 25px;
+  }
+  .inputfile + label{
+    width: 45%;
+  }
 }

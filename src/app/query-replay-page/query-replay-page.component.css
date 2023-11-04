@@ -2,21 +2,16 @@
     background-color: white;
     padding: 15px;
     font-size: 20px;
-    /* width: 550px; */
     color:#24854B;
     border-radius: 10px;
 }
-.container{
-    /* width: 44%; */
+.container-name{
     margin-top: 4%;
     display: flex;
     gap: 80px;
+    max-width: 1200px;
+    margin: auto;
 }
-/* .inner-container{
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-} */
 .answer{
     background-color: #DDFFE0;
     color: #24854B;
@@ -69,6 +64,7 @@ textarea {
     padding: 13px;
     font-size: 19px;
     border-radius: 10px;
+    width: 100%;
   }
   .res-btn{
     background-color: #24854B;
@@ -121,11 +117,21 @@ textarea {
   } */
 /* media */
 @media(max-width:1200px){
-.container{
+.container-name{
     flex-direction: column;
     align-items: center;
 }
 .second-inner-container-right{
     width: 70%;
 }
+.inner-container{
+    width: 70%;
+}
+}
+@media(max-width: 660px){
+    .inner-container{
+        width: 85%;
+
+    }
+
 }

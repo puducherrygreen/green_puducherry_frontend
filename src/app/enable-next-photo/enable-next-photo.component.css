@@ -170,4 +170,10 @@ option {
   .count {
     font-size: 87px;
   }
+  .container{
+    width: 95%;
+  }
+  .main-container-inner{
+    width: 95%;
+  }
 }

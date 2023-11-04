@@ -142,6 +142,32 @@ width: 100%;
   margin: auto;
   padding: 22px;
 }
+@media(max-width:550px){
+  .login-container{
+    width: 95%;
+    padding: 17px;
+  }
+  .form-class{
+    padding: 10px;
+  }
+  .heading-admin-login{
+    font-size: 27px;
+
+  }
+}
+@media(max-width:500px){
+  .login-container{
+    width: 98%;
+    padding: 12px;
+  }
+  .form-class{
+    padding: 6px;
+  }
+  .heading-admin-login{
+    font-size: 25px;
+
+  }
+}
   
   /* For larger screens (e.g., tablets and desktops) */
   /* @media (min-width: 769px) {

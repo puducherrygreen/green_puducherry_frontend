@@ -206,6 +206,7 @@ form.example input[type=text] {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
   }
   .image-container{
     display:flex ;
@@ -230,6 +231,23 @@ form.example input[type=text] {
   @media(max-width:560px){
     .button-cls{
       width:160px
+    }
+    .heading-cls-1{
+      font-size: 24px;
+    }
+    .heading-cls{
+      font-size: 27px;
+    }
+    .inner-container{
+      width: 95%;
+      padding: 20px;
+    }
+    .search-bar{
+      justify-content: center;
+      gap: 12px;
+    }
+    .example{
+      width: 330px;
     }
 
   }

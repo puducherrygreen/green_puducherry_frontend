@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 90%;
+  width: 100%;
   gap: 30px;
 }
 .dropdown-class {
@@ -81,15 +81,11 @@ option {
 }
 @media (max-width: 1000px) {
   .container {
-    /* flex-wrap: wrap; */
     align-items: center;
     justify-content: center;
   }
 }
 @media (max-width: 1000px) {
-  /* .container {
-      flex-direction: column;
-    } */
   .dropdown-class {
     flex-direction: column;
   }
@@ -101,18 +97,18 @@ option {
   .input-class,
   .textarea-class,
   .select-option-class {
-    width: 100%; /* Expand to full container width */
-    max-width: 100%; /* Limit maximum width to container width */
+    width: 100%;
+    max-width: 100%;
   }
 }
 @media (max-width: 1000px) {
   .input-container {
-    margin-top: 15px; /* Adjust margin for spacing */
+    margin-top: 15px; 
   }
 }
 @media (max-width: 1000px) {
   .send-button {
-    width: 40%; /* Adjust the button width for smaller screens */
+    width: 50%;
   }
 }
 @media (max-width: 950px) {
@@ -149,6 +145,9 @@ option {
 @media(max-width:650px){
   .container{
     flex-wrap: wrap;
+  }
+  .main-container-inner{
+    width: 95%;
   }
 
 }
