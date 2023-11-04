@@ -17,7 +17,8 @@ import { QueryResponseComponent } from './query-response/query-response.componen
 import { QueryReplayPageComponent } from './query-replay-page/query-replay-page.component';
 import { Ng2SearchPipeModule} from 'ng2-search-filter';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSnackBarModule }from '@angular/material/snack-bar'
+import { MatSnackBarModule }from '@angular/material/snack-bar';
+import { PlantAddComponent } from './plant-add/plant-add.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MatSnackBarModule }from '@angular/material/snack-bar'
     EnableNextPhotoComponent,
     UserQueryComponent,
     QueryResponseComponent,
-    QueryReplayPageComponent
+    QueryReplayPageComponent,
+    PlantAddComponent
   ],
   imports: [
     BrowserModule,

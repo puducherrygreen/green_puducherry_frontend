@@ -11,6 +11,7 @@ import { UserQueryComponent } from './user-query/user-query.component';
 import { QueryResponseComponent } from './query-response/query-response.component';
 import { QueryReplayPageComponent } from './query-replay-page/query-replay-page.component';
 import { AuthGuardGuard } from './authGuard/auth-guard.guard';
+import { PlantAddComponent } from './plant-add/plant-add.component';
 
 const routes: Routes = [
  
@@ -40,6 +41,9 @@ const routes: Routes = [
   },
   {
     path:'query-response',component:QueryReplayPageComponent, canActivate:[AuthGuardGuard]
+  },
+  {
+    path:'plant-add',component:PlantAddComponent, canActivate:[AuthGuardGuard]
   }
 
 ];

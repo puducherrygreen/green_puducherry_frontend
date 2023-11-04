@@ -1,0 +1,19 @@
+
+<section>
+    <article>
+        <app-admin-homepage></app-admin-homepage>
+    </article>
+    <app-dashboard></app-dashboard>
+    
+    <div class="input-main-container">
+        <form [formGroup]="addPlantForm">
+        <div class="input-container">
+            <input type="text" placeholder="Plant name" class="input-class" formControlName="plantName">
+        </div>
+        <button type="button" class="send-button" (click)="addPlant()"><i
+            class="fa"
+            [ngClass]="{'fa-spin fa-spinner': isLoading}"></i>Add</button>
+    </form>
+
+</div>
+    </section>

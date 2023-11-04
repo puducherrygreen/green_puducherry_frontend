@@ -79,4 +79,8 @@ export class ApiService {
       duration: 3000, // Set the duration in milliseconds
     });
   }
+  // add plant
+  addPlant(data:any){
+    return this.http.post(this.baseurl+ '/v1/user/add/plant',data)
+  }
 }
