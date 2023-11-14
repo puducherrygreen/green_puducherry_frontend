@@ -60,7 +60,7 @@
 /*  */
 /* Base styles for smaller screens */
 .login-container {
-    width: 90%;
+    width: 75%;
     max-width: 100%;
     padding: 20px;
     border-radius: 10px;

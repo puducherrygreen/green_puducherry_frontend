@@ -3,20 +3,64 @@
   <div class="container">
     <div class="inner-container">
       <div class="main-inner-container" >
-      <p class="inner-div">Plant name: <span class="answer">{{this.plantName}}</span></p>
+      <!-- <p class="inner-div">Plant name: <span class="answer">{{this.plantName}}</span></p> -->
       <p class="inner-div">Username: <span class="answer">{{this.userName}}</span></p>
       <p class="inner-div">Region: <span class="answer">{{this.region}}</span></p>
       <p class="inner-div">Commune/Municipality: <span class="answer">{{this.cummune}}</span></p>
-      <p class="inner-div">Date&Time: <span class="answer">{{this.firstSapledDate | date: 'YYY-MM-dd'}} & {{this.firstSapledDate | date: 'h:mm a'}} </span></p>
+      <!-- <p class="inner-div">Date&Time: <span class="answer">{{this.firstSapledDate | date: 'YYY-MM-dd'}} & {{this.firstSapledDate | date: 'h:mm a'}} </span></p> -->
     </div>
-      <div class="sub-inner-container">
+      <!-- <div class="sub-inner-container">
         <p class="inner-div">Status: <span class="answer">{{this.plantStatus}}</span></p>
         <p class="inner-div">Photos: <br><span class=" images" >
           <div *ngFor="let item of this.imageData">
             <img src="{{item.imageUrl}}" class="image-view">
           </div>
           </span></p>
-      </div>
+      </div> -->
+
+      
     </div>
+  </div>
+  <div style="padding-bottom: 10px;">
+    <table cellpadding="20px" class="table-class">
+      <tr>
+        <th>S:no</th>
+        <th>Plant name</th>
+        <th>Date & Time</th>
+        <th>Photos</th>
+        <th>Location</th>
+      </tr>
+      <tr *ngFor="let items of this.plantDetails;let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{items.plantName}}</td>
+        <td>{{ items.date | date: 'YYY-MM-mm' }} & {{ items.date | date: 'h: mm a' }}</td> 
+        <td>
+          <div class="image-container">
+            <div
+              *ngFor="let imageData of items.plantImagesData; let i = index"
+              class="image-wrapper"
+            >
+            <div class="image-data-date">
+              <img
+                src="{{ imageData.imageUrl }}"
+                height="100px"
+                width="100px"
+                class="image-1"
+              />
+              <p>{{imageData.date | date: 'YYY-MM-dd'}}</p>
+            </div>
+              <!-- <div
+                *ngIf="i === 1 && items.plantImagesData.length > 2"
+                class="more-images"
+              >
+              </div> -->
+            </div>
+          </div>
+        </td>
+        <td>{{items.latitude}} & {{items.longitude}}</td>
+
+
+      </tr>
+    </table>
   </div>
 </section>

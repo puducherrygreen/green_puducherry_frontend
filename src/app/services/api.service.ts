@@ -42,7 +42,8 @@ export class ApiService {
     return this.http.get(this.baseurl+"/v1/admin/get/query/admin")
   }
   getUserQueryByPassingId(id:any){
-    return this.http.get(this.baseurl+'/v1/admin/get/user/query/response/ById/'+id)
+    // return this.http.get(this.baseurl+'/v1/admin/get/user/query/response/ById/'+id)
+    return this.http.get(this.baseurl+ '/v1/admin/get/user/plants/byUserId/'+id)
   }
   getCommuneData(id:any){
     return this.http.get(this.baseurl+"/v1/user/get/commune/byRegionId/"+id)

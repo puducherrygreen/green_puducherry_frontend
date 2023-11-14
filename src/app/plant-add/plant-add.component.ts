@@ -22,6 +22,5 @@ export class PlantAddComponent {
       this.isLoading = false;
       this.addPlantForm.reset();
     })
-
   }
 }

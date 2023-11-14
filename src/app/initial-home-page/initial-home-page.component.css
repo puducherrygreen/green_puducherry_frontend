@@ -104,11 +104,13 @@
 @media (max-width: 630px) {
   .button-cls {
     width: 180px;
+    padding: 17px
   }
 }
 @media (max-width: 560px) {
   .button-cls {
-    width: 160px;
+    width: 100%;
+    padding: 15px
   }
   .heading-cls-1{
     font-size: 22px;
