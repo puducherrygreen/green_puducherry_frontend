@@ -39,7 +39,7 @@ export class AdminViewComponent {
   getRegionCount(){
     this.api.regionCount().subscribe((res:any)=>{
       console.log(res,"regionscount")
-      this.dataDetails =res[0];
+      this.dataDetails =res;
       this.puducherry = this.dataDetails.puducherry;
       this.karaikal=this.dataDetails.karaikal;
       this.mahe = this.dataDetails.mahe;

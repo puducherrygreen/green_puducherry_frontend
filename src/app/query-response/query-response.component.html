@@ -2,13 +2,13 @@
 <section>
   <div class="container">
     <div class="inner-container">
-      <div class="main-inner-container" >
-      <!-- <p class="inner-div">Plant name: <span class="answer">{{this.plantName}}</span></p> -->
-      <p class="inner-div">Username: <span class="answer">{{this.userName}}</span></p>
-      <p class="inner-div">Region: <span class="answer">{{this.region}}</span></p>
-      <p class="inner-div">Commune/Municipality: <span class="answer">{{this.cummune}}</span></p>
-      <!-- <p class="inner-div">Date&Time: <span class="answer">{{this.firstSapledDate | date: 'YYY-MM-dd'}} & {{this.firstSapledDate | date: 'h:mm a'}} </span></p> -->
-    </div>
+      <div class="main-inner-container">
+        <!-- <p class="inner-div">Plant name: <span class="answer">{{this.plantName}}</span></p> -->
+        <p class="inner-div">Username: <span class="answer">{{this.userName}}</span></p>
+        <p class="inner-div">Region: <span class="answer">{{this.region}}</span></p>
+        <p class="inner-div">Commune/Municipality: <span class="answer">{{this.cummune}}</span></p>
+        <!-- <p class="inner-div">Date&Time: <span class="answer">{{this.firstSapledDate | date: 'YYY-MM-dd'}} & {{this.firstSapledDate | date: 'h:mm a'}} </span></p> -->
+      </div>
       <!-- <div class="sub-inner-container">
         <p class="inner-div">Status: <span class="answer">{{this.plantStatus}}</span></p>
         <p class="inner-div">Photos: <br><span class=" images" >
@@ -18,10 +18,10 @@
           </span></p>
       </div> -->
 
-      
+
     </div>
   </div>
-  <div style="padding-bottom: 10px;">
+  <div style="padding-bottom: 10px;background-color: white;padding-top: 35px;">
     <table cellpadding="20px" class="table-class">
       <tr>
         <th>S:no</th>
@@ -33,28 +33,42 @@
       <tr *ngFor="let items of this.plantDetails;let i = index">
         <td>{{i + 1}}</td>
         <td>{{items.plantName}}</td>
-        <td>{{ items.date | date: 'YYY-MM-mm' }} & {{ items.date | date: 'h: mm a' }}</td> 
+        <td>{{ items.date | date: 'YYY-MM-dd' }} & {{ items.date | date: 'h: mm a' }}</td>
         <td>
           <div class="image-container">
-            <div
-              *ngFor="let imageData of items.plantImagesData; let i = index"
-              class="image-wrapper"
-            >
-            <div class="image-data-date">
-              <img
-                src="{{ imageData.imageUrl }}"
-                height="100px"
-                width="100px"
-                class="image-1"
-              />
-              <p>{{imageData.date | date: 'YYY-MM-dd'}}</p>
-            </div>
+            <div *ngFor="let imageData of items.plantImagesData; let i = index" class="image-wrapper">
+              <div class="image-data-date" style="position: relative;">
+                <img src="{{ imageData.imageUrl }}" height="100px" width="100px" class="image-1" />
+                <i class="fa fa-close" style="font-size: 18px" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal1"></i>
+                <p>{{imageData.date | date: 'YYY-MM-dd'}}</p>
+              </div>
               <!-- <div
                 *ngIf="i === 1 && items.plantImagesData.length > 2"
                 class="more-images"
               >
               </div> -->
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      Are you sure that you want to delete this Image?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" (click)="removeImage(imageData._id)">Yes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
           </div>
         </td>
         <td>{{items.latitude}} & {{items.longitude}}</td>

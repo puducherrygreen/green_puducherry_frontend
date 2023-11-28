@@ -26,7 +26,7 @@ export class InitialHomePageComponent {
   getRegionCount(){
     this.api.regionCount().subscribe((res:any)=>{
       console.log(res,"regionscount")
-      this.data =res[0];
+      this.data =res;
       this.puducherry = this.data.puducherry;
       this.karaikal=this.data.karaikal;
       this.mahe = this.data.mahe;

@@ -39,13 +39,16 @@ export class QueryResponseComponent {
       this.userName = this.data.userName;
       this.plantDetails = this.data.plantDetailsData;
       this.plantImages = this.data.plantDetailsData.plantImagesData
-      // this.plantName = this.data.plantDetailsData.plantName;
-      //  this.firstSapledDate= this.data.plantDetailsData.date;
-      //  this.plantStatus = this.data.plantDetailsData.status;
-      //  this.imageData = this.data.plantDetailsData.plantImagesData
-
     })
 
+  }
+  removeImage(id:any) {
+    console.log(id,"iddd")
+    this.api.deleteImageForQuery(id).subscribe((res:any)=>{
+      this.api.openSnackBar('Image Deleted',"close")
+      window.location.reload()
+      this.getUserQueryById(this.userId);
+    })
   }
 
 }
