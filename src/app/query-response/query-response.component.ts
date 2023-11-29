@@ -11,11 +11,9 @@ export class QueryResponseComponent {
   constructor(public api: ApiService,public router: Router,public route: ActivatedRoute){}
 
   ngOnInit(){
-
     this.route.queryParams.subscribe((res:any)=>{
       this.userId = res.id;
       console.log(this.userId)
-
     })
     this.getUserQueryById(this.userId);
   }

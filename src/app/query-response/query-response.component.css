@@ -75,7 +75,7 @@ tr {
 }
 .image-container {
   display: flex;
-  gap: 5px;
+  gap: 15px;
   justify-content: center;
 }
 .image-data-date {

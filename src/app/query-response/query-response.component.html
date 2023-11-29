@@ -45,6 +45,7 @@
                 <i class="fa fa-close" style="font-size: 18px" data-bs-toggle="modal" data-bs-target="#exampleModal1"
                   (click)="setCurrentImageId(imageData._id)"></i>
                 <p>{{imageData.date | date: 'YYY-MM-dd'}}</p>
+                <p>{{items.latitude}} <br> {{items.longitude}}</p>
               </div>
               <!-- <div
                 *ngIf="i === 1 && items.plantImagesData.length > 2"
@@ -71,7 +72,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         </td>
         <td>{{items.latitude}} & {{items.longitude}}</td>
