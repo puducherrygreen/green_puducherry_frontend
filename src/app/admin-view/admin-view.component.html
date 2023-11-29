@@ -43,9 +43,11 @@
           <tr>
             <th>S:no</th>
             <th>Username</th>
+            <th>Plant Land</th>
+            <th>Plant Name</th>
             <th>Region</th>
             <th>Commune/Municipality</th>
-            <th>Date & Time</th>
+            <th>Date</th>
             <th>Status</th>
             <th>Photos</th>
             <th>Location</th>
@@ -54,9 +56,11 @@
           <tr *ngFor="let items of data | filter:seachText ; let i = index ">
             <td>{{ i + 1 }}</td>
             <td>{{ items.userName }}</td>
+            <td>{{items.plantLand}}</td>
+            <td>{{items.plantName}}</td>
             <td>{{ items.region }}</td>
             <td>{{ items.commune }}</td>
-            <td>{{ items.firstSapledDate | date: 'YYY-MM-dd' }} & {{ items.firstSapledDate | date: 'h: mm a' }}</td>
+            <td>{{ items.firstSapledDate | date: 'YYY-MM-dd' }}</td>
             <td>{{ items.status }}</td>
 
             <td>

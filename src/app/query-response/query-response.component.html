@@ -21,26 +21,29 @@
 
     </div>
   </div>
-  <div style="padding-bottom: 10px;background-color: white;padding-top: 35px;">
+  <div
+    style="padding-bottom: 10px;background-color: white;padding-top: 35px;width: 95%;border-radius: 15px;margin: auto;">
     <table cellpadding="20px" class="table-class">
       <tr>
         <th>S:no</th>
+        <th>Plant land</th>
         <th>Plant name</th>
-        <th>Date & Time</th>
+        <th>Date</th>
         <th>Photos</th>
         <th>Location</th>
       </tr>
       <tr *ngFor="let items of this.plantDetails;let i = index">
         <td>{{i + 1}}</td>
+        <td>{{items.plantLand.landName}}</td>
         <td>{{items.plantName}}</td>
-        <td>{{ items.date | date: 'YYY-MM-dd' }} & {{ items.date | date: 'h: mm a' }}</td>
+        <td>{{ items.date | date: 'YYY-MM-dd' }} </td>
         <td>
           <div class="image-container">
             <div *ngFor="let imageData of items.plantImagesData; let i = index" class="image-wrapper">
               <div class="image-data-date" style="position: relative;">
                 <img src="{{ imageData.imageUrl }}" height="100px" width="100px" class="image-1" />
-                <i class="fa fa-close" style="font-size: 18px" data-bs-toggle="modal"
-                  data-bs-target="#exampleModal1"></i>
+                <i class="fa fa-close" style="font-size: 18px" data-bs-toggle="modal" data-bs-target="#exampleModal1"
+                  (click)="setCurrentImageId(imageData._id)"></i>
                 <p>{{imageData.date | date: 'YYY-MM-dd'}}</p>
               </div>
               <!-- <div
@@ -62,7 +65,7 @@
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary" (click)="removeImage(imageData._id)">Yes</button>
+                      <button type="button" class="btn btn-primary" (click)="removeImage()">Yes</button>
                     </div>
                   </div>
                 </div>

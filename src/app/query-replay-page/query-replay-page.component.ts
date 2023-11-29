@@ -48,7 +48,8 @@ export class QueryReplayPageComponent {
       this.plantName = this.data.plantDetailsData.plantName;
       this.firstSapledDate = this.data.plantDetailsData.date;
       this.plantStatus = this.data.plantDetailsData.status;
-      this.imageData = this.data.plantDetailsData.plantImagesData;
+      this.imageData = this.data.plantDetailsData;
+      console.log(this.imageData,"this.imageData")
       //  this.query = this.data.queryData
     });
   }
@@ -73,9 +74,13 @@ export class QueryReplayPageComponent {
         this.api.openSnackBar('sent response',"close")
       });
   }
-  removeImage(id: any) {
-    console.log(id,"iddd")
-    this.api.deleteImageForQuery(id).subscribe((res:any)=>{
+  currentImageId: any;
+   setCurrentImageId(imageId: any) {
+     this.currentImageId = imageId;
+  }
+  removeImage() {
+    console.log(this.currentImageId,"iddd")
+    this.api.deleteImageForQuery(this.currentImageId).subscribe((res:any)=>{
       this.api.openSnackBar('Image Deleted',"close")
       window.location.reload()
       this.getUserQueryById(this.userId);

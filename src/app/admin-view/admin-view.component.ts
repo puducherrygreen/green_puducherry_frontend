@@ -15,7 +15,8 @@ export class AdminViewComponent {
   }
 
   data:any;
-  images:any
+  images: any
+  // table get data
   viewUserData(){
     this.api.adminViewAll().subscribe((res:any)=>{
       this.data = res;
@@ -31,11 +32,13 @@ export class AdminViewComponent {
   yanam = 0;
   dataDetails:any;
   seachText = ''
+  // get over all count
   getOverAllCount(){
     this.api.overAllSapledCount().subscribe((res:any)=>{
       this.overAllCountSapled = res.count
     })
   }
+  // count regions
   getRegionCount(){
     this.api.regionCount().subscribe((res:any)=>{
       console.log(res,"regionscount")

@@ -30,7 +30,8 @@ export class QueryResponseComponent {
   plantStatus:any;
   imageData:any;
   plantDetails:any;
-  plantImages:any;
+  plantImages: any;
+  plantLand:any
   getUserQueryById(id:any){
     this.api.getUserQueryByPassingId(this.userId).subscribe((res:any)=>{
       this.data = res;
@@ -38,15 +39,19 @@ export class QueryResponseComponent {
       this.cummune = this.data.commune.communeName;
       this.userName = this.data.userName;
       this.plantDetails = this.data.plantDetailsData;
-      this.plantImages = this.data.plantDetailsData.plantImagesData
+      this.plantImages = this.data.plantDetailsData.plantImagesData;
+      // this.plantLand = this.data.plantDetailsData.plantLand.landName;
     })
-
   }
-  removeImage(id:any) {
-    console.log(id,"iddd")
-    this.api.deleteImageForQuery(id).subscribe((res:any)=>{
-      this.api.openSnackBar('Image Deleted',"close")
+    currentImageId: any;
+   setCurrentImageId(imageId: any) {
+     this.currentImageId = imageId;
+  }
+  removeImage() {
+    console.log(this.currentImageId,"iddd")
+    this.api.deleteImageForQuery(this.currentImageId).subscribe((res:any)=>{
       window.location.reload()
+      this.api.openSnackBar('Image Deleted',"close")
       this.getUserQueryById(this.userId);
     })
   }

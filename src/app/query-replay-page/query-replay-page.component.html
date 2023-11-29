@@ -10,13 +10,12 @@
         <p class="inner-div">Date&Time: <span class="answer">{{this.firstSapledDate | date: 'YYY-MM-dd'}} &
             {{this.firstSapledDate | date: 'h:mm a'}} </span></p>
         <!-- <p class="inner-div">Status: <span class="answer">{{this.plantStatus}}</span></p> -->
-        <p class="inner-div">Photos: <br><span class=" images">
-            <div *ngFor="let item of imageData">
+        <!-- <p class="inner-div">Photos: <br><span class=" images"> -->
+        <!-- <div *ngFor="let item of imageData">
               <div class="image-container">
-                <img src="{{item.imageUrl}}" class="image-view">
+                <img src="{{item.plantImagesData.imageUrl}}" class="image-view">
                 <i class="fa fa-close close-button" data-bs-toggle="modal" data-bs-target="#exampleModal1"></i>
               </div>
-              <!-- Modal -->
               <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
@@ -35,18 +34,18 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
 
 
-            <!-- <div *ngFor="let item of this.imageData">
+        <!-- <div *ngFor="let item of this.imageData">
             <img src="{{item.imageUrl}}" class="image-view"><i
             class="fa fa-close"
             style="font-size: 18px;color: red;"
             (click)="removeImage(item._id,item)"
           ></i>
           </div> -->
-          </span></p>
+        <!-- </span></p> -->
       </div>
 
     </div>
@@ -64,11 +63,103 @@
       </form>
       <button type="button" class="btn btn-success respond" (click)="response()"><i class="fa"
           [ngClass]="{'fa-spin fa-spinner': isLoading}"></i>Response</button>
-
     </div>
-
-
+    <!--  -->
   </div>
 
+
+  <p class="inner-div-1">Photos:<span class="images">
+      <div class="inner-images-container">
+        <div *ngFor="let items of this.imageData">
+          <p *ngIf="items.plantImagesData.length > 0">Plant Name: {{items.plantName}}</p>
+          <div *ngFor="let innerItems of items.plantImagesData" class="image-container">
+            <div>
+              <img src="{{innerItems.imageUrl}}" class="image-view">
+              <i class="fa fa-close close-button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                (click)="setCurrentImageId(innerItems._id)"></i>
+            </div>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Are you sure that you want to delete this Image?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="removeImage()">Yes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </span></p>
+
+
+  <!-- <p class="inner-div-1">Photos:<span class="images">
+      <div class="inner-images-container">
+        <div *ngFor="let items of this.imageData">
+          <p>Plant Name: {{items.plantName}}</p>
+          <div *ngFor="let innerItems of items.plantImagesData" class="image-container">
+            <div>
+              <img src="{{innerItems.imageUrl}}" class="image-view">
+              <i class="fa fa-close close-button" data-bs-toggle="modal" data-bs-target="#exampleModal1"></i>
+            </div>
+
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Are you sure that you want to delete this Image?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="removeImage(innerItems._id)">Yes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </span></p> -->
+
+
+  <!-- <div *ngFor="let item of imageData">
+                      <div class="image-container">
+                        <img src="{{item.plantImagesData.imageUrl}}" class="image-view">
+                        <i class="fa fa-close close-button" data-bs-toggle="modal" data-bs-target="#exampleModal1"></i>
+                      </div>
+                      <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              Are you sure that you want to delete this Image?
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary" (click)="removeImage(item._id)">Yes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
 
 </section>

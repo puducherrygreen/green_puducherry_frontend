@@ -1,110 +1,113 @@
-.inner-div{
-    background-color: white;
-    padding: 15px;
-    font-size: 20px;
-    color:#24854B;
-    border-radius: 10px;
+.inner-div {
+  background-color: white;
+  padding: 15px;
+  font-size: 20px;
+  color: #24854b;
+  border-radius: 10px;
 }
-.container-name{
-    margin-top: 4%;
-    display: flex;
-    gap: 80px;
-    max-width: 1200px;
-    margin: auto;
+.container-name {
+  margin-top: 4%;
+  display: flex;
+  gap: 80px;
+  max-width: 1200px;
+  margin: auto;
 }
-.answer{
-    background-color: #DDFFE0;
-    color: #24854B;
-    padding: 10px;
-
+.answer {
+  background-color: #ddffe0;
+  color: #24854b;
+  padding: 10px;
 }
-.images{
-    display: flex;
-    gap: 10px;
-    background-color: #DDFFE0;
-    padding: 11px;
-    flex-wrap: wrap;
-    justify-content: center;
+.images {
+  display: flex;
+  gap: 10px;
+  background-color: #ddffe0;
+  padding: 11px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.main-inner-container{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.main-inner-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.sub-inner-container{
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
+.sub-inner-container {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
 }
-.image-view{  
-    height: 227px;
-    width: 260px;
-    object-fit: cover;
-} 
-.second-inner-container-right{
-    width: 55%;
-    display: flex;
-    flex-direction: column;
-    gap: 21px;
+.image-view {
+  height: 227px;
+  width: 260px;
+  object-fit: cover;
 }
-.query-view{
-    background-color: white;
-
+.second-inner-container-right {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
 }
-.query-con{
-    padding: 20px;
-    font-size: 19px;
-    border-radius: 10px;
+.query-view {
+  background-color: white;
 }
-.replay-query{
-    background-color: white;
+.query-con {
+  padding: 20px;
+  font-size: 19px;
+  border-radius: 10px;
+}
+.replay-query {
+  background-color: white;
 }
 textarea {
-    border: none;
-    padding: 13px;
-    font-size: 19px;
-    border-radius: 10px;
-    width: 100%;
-  }
-  .res-btn{
-    background-color: #24854B;
-    color: white;
-  }
-  .respond{
-    width: 50%;
-    font-size: 22px;
-  }
-.text-mes{
-    color: #B1B1B1;
+  border: none;
+  padding: 13px;
+  font-size: 19px;
+  border-radius: 10px;
+  width: 100%;
 }
-::placeholder{
-    color: #B1B1B1;
+.res-btn {
+  background-color: #24854b;
+  color: white;
+}
+.respond {
+  width: 50%;
+  font-size: 22px;
+}
+.text-mes {
+  color: #b1b1b1;
+}
+::placeholder {
+  color: #b1b1b1;
 }
 /* CSS for positioning the close button */
 .image-container {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .image-view {
-    display: block;
-    max-width: 100%; /* Ensure the image doesn't overflow its container */
-  }
-  
-  .close-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 18px;
-    color: red;
-    cursor: pointer;
-  }
-  
-  /* Optional: Add some padding or margin for spacing */
-  .close-button {
-    padding: 5px;
-  }
-  
+  position: relative;
+  display: inline-block;
+}
+
+.image-view {
+  display: block;
+  max-width: 100%; /* Ensure the image doesn't overflow its container */
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 18px;
+  color: red;
+  cursor: pointer;
+}
+
+/* Optional: Add some padding or margin for spacing */
+.close-button {
+  padding: 5px;
+}
+.inner-div-1 {
+  width: 75%;
+  margin: auto;
+  margin-top: 15px;
+}
+
 /* .fa-close {
     position: absolute;
     top: 5px;
@@ -116,22 +119,20 @@ textarea {
     padding: 7px;
   } */
 /* media */
-@media(max-width:1200px){
-.container-name{
+@media (max-width: 1200px) {
+  .container-name {
     flex-direction: column;
     align-items: center;
-}
-.second-inner-container-right{
+  }
+  .second-inner-container-right {
     width: 70%;
-}
-.inner-container{
+  }
+  .inner-container {
     width: 70%;
+  }
 }
-}
-@media(max-width: 660px){
-    .inner-container{
-        width: 85%;
-
-    }
-
+@media (max-width: 660px) {
+  .inner-container {
+    width: 85%;
+  }
 }
