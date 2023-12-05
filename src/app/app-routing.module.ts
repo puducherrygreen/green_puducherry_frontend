@@ -12,6 +12,7 @@ import { QueryResponseComponent } from './query-response/query-response.componen
 import { QueryReplayPageComponent } from './query-replay-page/query-replay-page.component';
 import { AuthGuardGuard } from './authGuard/auth-guard.guard';
 import { PlantAddComponent } from './plant-add/plant-add.component';
+import { NextPhotoUpdateDateComponent } from './next-photo-update-date/next-photo-update-date.component';
 
 const routes: Routes = [
  
@@ -44,6 +45,9 @@ const routes: Routes = [
   },
   {
     path:'plant-add',component:PlantAddComponent, canActivate:[AuthGuardGuard]
+  },
+  {
+    path: 'next-photo-update-date', component: NextPhotoUpdateDateComponent, canActivate:[AuthGuardGuard]
   }
 
 ];

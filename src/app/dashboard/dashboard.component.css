@@ -8,7 +8,7 @@
   padding: 5px;
 }
 .over-header {
-  max-width: 1200px;
+  max-width: 1400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,32 +54,32 @@
   color: #087519;
   font-size: 20px;
 }
-@media(max-width:1000px){
-  .nav-cls{
+@media (max-width: 1000px) {
+  .nav-cls {
     padding: 13px;
     font-size: 16px;
   }
-  .logout-button{
+  .logout-button {
     font-size: 14px;
     padding: 10px;
   }
 }
-@media(max-width:900px){
-  .nav-cls{
+@media (max-width: 900px) {
+  .nav-cls {
     padding: 12px;
     font-size: 15px;
   }
-  .logout-button{
+  .logout-button {
     font-size: 13px;
     padding: 8px;
   }
 }
-@media(max-width:880px){
-  .nav-cls{
+@media (max-width: 880px) {
+  .nav-cls {
     padding: 10px;
     font-size: 13px;
   }
-  .logout-button{
+  .logout-button {
     font-size: 12px;
     padding: 6px;
   }

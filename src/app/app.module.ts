@@ -18,7 +18,8 @@ import { QueryReplayPageComponent } from './query-replay-page/query-replay-page.
 import { Ng2SearchPipeModule} from 'ng2-search-filter';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule }from '@angular/material/snack-bar';
-import { PlantAddComponent } from './plant-add/plant-add.component'
+import { PlantAddComponent } from './plant-add/plant-add.component';
+import { NextPhotoUpdateDateComponent } from './next-photo-update-date/next-photo-update-date.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PlantAddComponent } from './plant-add/plant-add.component'
     UserQueryComponent,
     QueryResponseComponent,
     QueryReplayPageComponent,
-    PlantAddComponent
+    PlantAddComponent,
+    NextPhotoUpdateDateComponent
   ],
   imports: [
     BrowserModule,
