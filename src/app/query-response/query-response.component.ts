@@ -29,13 +29,17 @@ export class QueryResponseComponent {
   imageData:any;
   plantDetails:any;
   plantImages: any;
-  plantLand:any
+  plantLand: any;
+  Mobile: any;
+  Email: any;
   getUserQueryById(id:any){
     this.api.getUserQueryByPassingId(this.userId).subscribe((res:any)=>{
       this.data = res;
       this.region = this.data.region.regionName;
       this.cummune = this.data.commune.communeName;
       this.userName = this.data.userName;
+      this.Email = this.data.email;
+      this.Mobile = this.data.mobileNumber;
       this.plantDetails = this.data.plantDetailsData;
       this.plantImages = this.data.plantDetailsData.plantImagesData;
       // this.plantLand = this.data.plantDetailsData.plantLand.landName;

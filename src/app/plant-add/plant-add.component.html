@@ -1,19 +1,35 @@
-
 <section>
     <article>
         <app-admin-homepage></app-admin-homepage>
     </article>
     <app-dashboard></app-dashboard>
-    
-    <div class="input-main-container">
-        <form [formGroup]="addPlantForm">
-        <div class="input-container">
-            <input type="text" placeholder="Plant name" class="input-class" formControlName="plantName">
-        </div>
-        <button type="button" class="send-button" (click)="addPlant()"><i
-            class="fa"
-            [ngClass]="{'fa-spin fa-spinner': isLoading}"></i>Add</button>
-    </form>
+    <div class="container">
+        <div class="main-container-inner">
+            <form [formGroup]="addPlantForm">
+                <div class="dropdown-class">
+                    <div>
+                        <label class="label-class">Plant Land:</label>
+                        <div>
+                            <select class="select-option-class" formControlName="plantLand">
+                                <option class="option-cls" disabled> Select Land</option>
+                                <option class="option-cls" *ngFor="let land of this.land" value="{{land._id}}">
+                                    {{land.landName}}</option>
+                            </select>
+                        </div>
+                    </div>
 
-</div>
-    </section>
+                    <div>
+                        <label class="label-class">Plant Name:</label>
+                        <div>
+                            <input type="text" class="select-option-class" formControlName="plantName">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="button-grp">
+                <button type="button" class="button-enable btn" (click)="addPlant()"><i class="fa"
+                        [ngClass]="{'fa-spin fa-spinner': isLoading}"></i>Add</button>
+            </div>
+        </div>
+    </div>
+</section>

@@ -37,10 +37,16 @@
                             </select>
                         </div>
                     </div>
+                    <div>
+                        <label class="label-class">Update date for next photo upload:</label>
+                        <div>
+                            <input type="date" class="select-option-class" formControlName="updateDateNextPhoto">
+                        </div>
+                    </div>
                 </div>
             </form>
             <div class="button-grp">
-                <button type="button" class="button-enable btn"><i class="fa"
+                <button type="button" class="button-enable btn" (click)="updateDateForNextPhoto()"><i class="fa"
                         [ngClass]="{'fa-spin fa-spinner': isLoading}"></i>Update Date For Next Photo</button>
                 <!-- <button type="button" class="button-disable btn" (click)="disable()"><i class="fa"
                         [ngClass]="{'fa-spin fa-spinner': isLoadingdis}"></i>Disable Next Photo</button> -->

@@ -14,17 +14,29 @@ export class AdminViewComponent {
     this.getRegionCount();
   }
 
+  count = 0
   data:any;
-  images: any
+  images: any;
+  searchTerm: string = '';
+  searchResults: string[] = [];
   // table get data
   viewUserData(){
     this.api.adminViewAll().subscribe((res:any)=>{
       this.data = res;
-      console.log(this.data,"this.data")
     })
   }
   // 
-
+updateSearchResults() {
+  if (Array.isArray(this.data)) {
+    this.searchResults = this.data.filter((item: any) =>
+      Object.values(item).some((value: any) =>
+        value.toString().toLowerCase().includes(this.seachText.toLowerCase())
+      )
+    );
+    this.count = this.searchResults.length; // Update the count
+    console.log(this.searchResults, "this.searchResults");
+  }
+}
   overAllCountSapled= 0;
   puducherry= 0;
   karaikal= 0;

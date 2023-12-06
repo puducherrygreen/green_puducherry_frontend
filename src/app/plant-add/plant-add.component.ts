@@ -13,14 +13,22 @@ export class PlantAddComponent {
   addPlantForm:any;
   ngOnInit(){
     this.addPlantForm = new FormGroup({
-      plantName: new FormControl()
+      plantName: new FormControl(),
+      plantLand: new FormControl()
     })
+    this.getPlantLand();
   }
   addPlant(){
     this.isLoading = true;
     this.api.addPlant(this.addPlantForm.value).subscribe((res:any)=>{
       this.isLoading = false;
       this.addPlantForm.reset();
+    })
+  }
+  land: any;
+  getPlantLand() {
+    this.api.getPlantLand().subscribe((res: any) => {
+      this.land = res
     })
   }
 }

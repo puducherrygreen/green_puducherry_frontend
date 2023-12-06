@@ -17,7 +17,8 @@ constructor(public api: ApiService){}
     this.enablePhotoForm= new FormGroup({
       status : new FormControl('All'),
       communeId: new FormControl('All'),
-      regionId: new FormControl('All')
+      regionId: new FormControl('All'),
+      updateDateNextPhoto: new FormControl()
     })
   }
   commune:any
@@ -36,6 +37,14 @@ constructor(public api: ApiService){}
   getCommune(){
     this.api.getCommuneData(this.regionId).subscribe((res:any)=>{
       this.commune = res
+    })
+  }
+  updateDateForNextPhoto() {
+    this.isLoading = true;
+    this.api.updateDate(this.enablePhotoForm.value).subscribe((res: any) => {
+      this.isLoading = false;
+      this.api.openSnackBar("Next photo upload date is updated", "close")
+      window.location.reload()
     })
   }
   // enable(){

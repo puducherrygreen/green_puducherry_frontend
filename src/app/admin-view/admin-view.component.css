@@ -220,6 +220,10 @@ tr {
   border-radius: 10px;
   width: 56px;
 }
+.search-count {
+  font-size: 20px;
+  color: #16763c;
+}
 @media (max-width: 630px) {
   .button-cls {
     width: 180px;

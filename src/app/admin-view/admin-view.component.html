@@ -33,8 +33,11 @@
     <div class="inner-table-container">
       <div class="search-bar">
         <a class="download_csv" (click)="download()">Download CSV</a>
+        <p class="search-count">Search count: {{count}}</p>
         <form class="example">
-          <input type="text" class="text-clor" placeholder="Search.." name="search2" [(ngModel)]="seachText" />
+
+          <input type="text" class="text-clor" placeholder="Search.." name="search2" [(ngModel)]="seachText"
+            (input)="updateSearchResults()" />
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>

@@ -84,4 +84,10 @@ export class ApiService {
   addPlant(data:any){
     return this.http.post(this.baseurl+ '/v1/user/add/plant',data)
   }
+  updateDate(data:any) {
+    return this.http.post(this.baseurl + "/v1/admin/updateDate/nextPhoto/upload",data)
+  }
+  getPlantLand() {
+    return this.http.get(this.baseurl+ "/v1/user/get/plant/land")
+  }
 }
